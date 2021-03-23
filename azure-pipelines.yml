@@ -36,6 +36,6 @@ steps:
     MessageAuthor: 'Azure DevOps'
     Channel: '#general'
     NotificationType: 'ChatMessage'
-    Message: '@kirillakulich0 :angel::skin-tone-2:  $(some_string)'
+    Message: '<@U01S168AE2H> :angel::skin-tone-2:  $(some_string)'
 
 

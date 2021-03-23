@@ -20,11 +20,12 @@ steps:
       echo $(ls $(Build.SourcesDirectory))
       sudo find $(Build.SourcesDirectory) -print
       VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
+      VERSIONCODE=`grep versionCode ${MANIFEST} | sed 's/.*versionCode\s*=\s*\"\([^\"]*\)\".*/\1/g'`
 
-      echo $MANIFEST
-      echo $VERSIONMAE
+      echo $VERSIONAME
+      echo $VERSIONCODE
       echo test 
-      echo "##vso[task.setvariable variable=some_string]$MANIFEST"
+      echo "##vso[task.setvariable variable=some_string]New android stage build version {$VERSIONNAME}.{$VERSIONCODE} "
       
    
 

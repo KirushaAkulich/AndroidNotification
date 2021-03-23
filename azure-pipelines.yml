@@ -18,6 +18,7 @@ steps:
       echo Hello world
       MANIFEST="$(Build.SourcesDirectory)/app/src/main/AndroidManifest.xml"
       echo $(ls $(Build.SourcesDirectory))
+      sudo find $(Build.SourcesDirectory) -print
       VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
 
       echo $MANIFEST

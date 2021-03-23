@@ -22,7 +22,7 @@ steps:
 
       echo $MANIFEST
       echo $VERSIONMAE
-      echo test echo
+      echo test 
       echo "##vso[task.setvariable variable=some_string]fghfghfghfhg"
       
    

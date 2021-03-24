@@ -22,7 +22,7 @@ steps:
       echo $VERSIONCODE
       
       echo `git rev-parse HEAD`
-      echo `git rev-parse --abbrev-ref HEAD`
+      echo `git symbolic-ref --short HEAD`
 
       echo $CURRENT_BRUNCH
       if [[ $a == main* ]];

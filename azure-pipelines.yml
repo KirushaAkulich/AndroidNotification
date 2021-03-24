@@ -46,4 +46,10 @@ steps:
     NotificationType: 'ChatMessage'
     Message: 'Slack <@U01S168AE2H> :angel::skin-tone-2:  $(some_string)'
 
+- task: GitTag@5
+  inputs:
+    workingdir: '$(SYSTEM.DEFAULTWORKINGDIRECTORY)'
+    tagUser: 'Azure'
+    tag: '$(build.buildNumber)'
+
 

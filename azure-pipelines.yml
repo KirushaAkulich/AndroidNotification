@@ -42,7 +42,7 @@ steps:
   inputs:
     SlackApiToken: '$(Slack.ApiKey)'
     MessageAuthor: 'Azure DevOps'
-    Channel: '#general'
+    Channel: '#private-test'
     NotificationType: 'ChatMessage'
     Message: 'Slack <@U01S168AE2H> :angel::skin-tone-2:  $(some_string)'
 

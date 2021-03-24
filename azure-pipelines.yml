@@ -28,7 +28,7 @@ steps:
 
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
       git tag -a v1.4 -m "my version 1.4" 
-      git push origin v1.4
+      git rev-parse HEAD
 
 
       

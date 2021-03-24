@@ -27,7 +27,8 @@ steps:
       echo test 
 
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
-      curl -X POST  -H "Accept: Application/json" -H "Content-Type: application/json" https://hooks.slack.com/services/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 -d '{"text" : " <@U01S168AE2H> :angel::skin-tone-2: New android stage build version $VERSIONNAME.$VERSIONCODE} '
+      curl -X POST  -H "Accept: Application/json" -H "Content-Type: application/json" https://hooks.slack.com/services/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 -d '{"text":"IDVALUEfff"}' 
+
 
       
    

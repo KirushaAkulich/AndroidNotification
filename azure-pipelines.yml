@@ -21,8 +21,8 @@ steps:
       echo $VERSIONAME
       echo $VERSIONCODE
       
-      COMMITHASH=$(git rev-parse HEAD)
-      CURRENT_BRUNCH=$(git rev-parse --abbrev-ref HEAD)
+      echo `git rev-parse HEAD`
+      echo `git rev-parse --abbrev-ref HEAD`
 
       echo $CURRENT_BRUNCH
       if [[ $a == main* ]];

@@ -23,7 +23,7 @@ steps:
       
       echo `git rev-parse HEAD`
       echo $(Build.SourceBranchName) 
-
+      echo $(Build.SourceVersion)
       echo $CURRENT_BRUNCH
       if [[ $a == main* ]];
       then

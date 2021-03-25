@@ -34,7 +34,11 @@ steps:
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
 
 
-      
+- task: CmdLine@2
+  inputs:
+    script: |
+      git tag v1.4-lw   
+      git -c credential.helper='!f() { echo "username=token"; echo "password=$(TOKEN)"; };f' push v1.4-lw
    
 
 

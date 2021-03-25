@@ -47,8 +47,11 @@ steps:
       touch some_file.txt
       echo 'some_text' > some_file.txt
       git add .
+      git status
       git commit -m 'testing'
+      echo current branch
       git branch
+      git branch -r
       #git push -u origin master 
    
 

@@ -52,7 +52,7 @@ steps:
       echo current branch
       git branch
       git branch -r
-      #git push -u origin master 
+      git push -u origin $(Build.SourceBranchName)  
    
 
 

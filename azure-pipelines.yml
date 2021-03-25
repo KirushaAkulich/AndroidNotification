@@ -43,6 +43,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
       git tag v1.4
       touch some_file.txt
       echo 'some_text' > some_file.txt

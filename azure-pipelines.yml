@@ -76,6 +76,10 @@ steps:
     script: |
       MANIFEST="$(Build.SourcesDirectory)/app/src/main/AndroidManifest.xml"
       VERSIONCODE=`grep versionCode ${MANIFEST} | sed 's/.*versionCode\s*=\s*\"\([^\"]*\)\".*/\1/g'`
+
+      git fetch
+      git pull
+      
       sed -i.bak "s/android:versionCode="\"${VERSIONCODE}\""/android:versionCode="\"$(($VERSIONCODE + 1))\""/" ${MANIFEST}
       
       rm -f ${MANIFEST}.bak

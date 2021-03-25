@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionName="1.9" android:versionCode="105" package="com.example.slacktestnotifications">
+    android:versionName="1.9" android:versionCode="106" package="com.example.slacktestnotifications">
 
     <application
         android:allowBackup="true"

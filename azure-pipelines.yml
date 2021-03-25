@@ -10,6 +10,12 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8Ozt5Ih9u2HQipwTQLM8kSyP9Cc/HQI7b1c0bfYmeDWmc6SrQJv9q6TVOYRiVnxsTNPgpf4A4WSugbKsvIEthTO5BRarBKy3VNTaU5pTcvejsV/z9D5+8DXS7Ln6aqzfZFDWor2pk9BfBe7jEd/aVdTQqQq0HV/+RmE1evxT5O/Jh33srNyaWu4IVlgxNvodaYIH+V7oFzXHd3j2waaRbSE2JzNabWknOEvD4iSdAnzBmiOmAQq9lYTBUL76+ExhBufyWxt5oBNKT3p6jgy9cv3IpNNWy2ODl1bvsT2sjVD2TGZJljunP+ehIBnfYwA/XUpXL9IHSZOGJSqydKGeSf5Sk7/WoLYDXcRy8O/qQWppROiKha9JGyglvvObWKnXuPfIoVhosKpru+vQiQeGVtJ0vHlKtHMg7kHWbV4nk/JaDsSYzp4UM8I4fbYzx9QLDwbRIg8uFOozKWMQDTp97nRQmRMhSe0sFCkiADRQnMjNCYe/j2yrJn2ybh/IqNc8= kiryl@kiryl-Lenovo-ideapad-Y700-15ISK'
+    sshKeySecureFile: 'id_rsa'
+
 - task: CmdLine@2
   inputs:
     script: |
@@ -38,7 +44,7 @@ steps:
   inputs:
     script: |
       git tag v1.4-lw   
-      git -c credential.helper='!f() { echo "username=token"; echo "password=$(TOKEN)"; };f' push v1.4-lw
+      git push --tags v1.4-lw
    
 
 

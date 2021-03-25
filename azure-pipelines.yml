@@ -45,9 +45,10 @@ steps:
     script: |
       git tag v1.4
       touch some_file.txt
+      echo 'some_text' > some_file.txt
       git add .
       git commit -m 'testing'
-      echo $(git branch)
+      git branch
       #git push -u origin master 
    
 

@@ -43,8 +43,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      git tag v1.4-lw   
-      git push --tags v1.4-lw
+      git tag v1.4
+      git push --tags AndroidNotification
    
 
 

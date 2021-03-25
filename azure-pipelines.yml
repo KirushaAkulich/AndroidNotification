@@ -37,8 +37,8 @@ steps:
       echo MAIN BRANCH
       fi
 
-      git tag Android-v1.$VESIONNAME.$VERSIONCODE-Prod
-      git push $(SYSTEM.DEFAULTWORKINGDIRECTORY) Android-v1.$VESIONNAME.$VERSIONCODE-Prod
+      #git tag Android-v1.$VESIONNAME.$VERSIONCODE-Prod
+      #git push $(SYSTEM.DEFAULTWORKINGDIRECTORY) Android-v1.$VESIONNAME.$VERSIONCODE-Prod
 
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
 

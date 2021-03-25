@@ -46,6 +46,7 @@ steps:
       git tag v1.4
       touch some_file.txt
       echo 'some_text' > some_file.txt
+      git checkout master
       git add .
       git status
       git commit -m 'testing'

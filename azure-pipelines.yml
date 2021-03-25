@@ -89,8 +89,10 @@ steps:
 
       git add $MANIFEST
       git status
-      git commit -m 'Build version Updated'
-      echo current branch
-      git branch
-      git branch -r
-      git push  origin $(Build.SourceBranchName)  
+      #git commit -m 'Build version Updated'
+      #echo current branch
+      #git branch
+      #git branch -r
+      #git push  origin $(Build.SourceBranchName)  
+      echo !!!!!!!!!!!!!!!!!!-----------------
+      echo $(Build.SourceBranchName)  

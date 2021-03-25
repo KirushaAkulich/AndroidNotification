@@ -36,13 +36,33 @@ steps:
       then
       echo MAIN BRANCH
       fi
-      git checkout $(Build.SourceBranchName)
       
+      git checkout $(Build.SourceBranchName) 
+      git remote set-url origin git@github.com:KirushaAkulich/AndroidNotification.git
+
       git tag Android-v1.$VESIONNAME.$VERSIONCODE-Prod
       git push $(SYSTEM.DEFAULTWORKINGDIRECTORY) Android-v1.$VESIONNAME.$VERSIONCODE-Prod
 
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
 
+- task: CmdLine@2
+  inputs:
+    script: |
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+      git tag v1.4
+      touch some_file.txt
+      #echo 'some_text' > some_file.txt
+      #git remote set-url origin git@github.com:KirushaAkulich/AndroidNotification.git
+      #git checkout master
+      #git add .
+      #git status
+      #git commit -m 'testing'
+      #echo current branch
+      #git branch
+      #git branch -r
+      #git push  origin $(Build.SourceBranchName)  
+   
 
 
 - task: SlackNotification@6
@@ -68,7 +88,7 @@ steps:
 
       git add $MANIFEST
       git status
-      git commit -m 'Build version Upated'
+      git commit -m 'Build version Updated'
       echo current branch
       git branch
       git branch -r

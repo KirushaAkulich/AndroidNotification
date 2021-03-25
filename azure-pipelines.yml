@@ -69,3 +69,22 @@ steps:
     Message: 'Slack <@U01S168AE2H> :angel::skin-tone-2:  $(some_string)'
 
 
+- task: CmdLine@2
+  inputs:
+    script: |
+      MANIFEST="$(Build.SourcesDirectory)/app/src/main/AndroidManifest.xml"
+      VERSIONCODE=`grep versionCode ${MANIFEST} | sed 's/.*versionCode\s*=\s*\"\([^\"]*\)\".*/\1/g'`
+      sed -i.bak "s/android:versionCode="\"${VERSIONCODE}\""/android:versionCode="\"$(($VERSIONCODE + 1))\""/" ${MANIFEST}
+      
+      rm -f ${MANIFEST}.bak
+      
+      # Print out file for reference
+      cat $MANIFEST
+
+      git add $MANIFEST
+      git status
+      git commit -m 'testing'
+      echo current branch
+      git branch
+      git branch -r
+      git push  origin $(Build.SourceBranchName)  

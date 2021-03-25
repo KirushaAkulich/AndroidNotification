@@ -39,7 +39,8 @@ steps:
       
       git checkout $(Build.SourceBranchName) 
       git remote set-url origin git@github.com:KirushaAkulich/AndroidNotification.git
-
+      echo REMOTES LIST
+      git list --remotes
       git tag Android-v1.$VESIONNAME.$VERSIONCODE-Prod
       git push $(SYSTEM.DEFAULTWORKINGDIRECTORY) Android-v1.$VESIONNAME.$VERSIONCODE-Prod
 

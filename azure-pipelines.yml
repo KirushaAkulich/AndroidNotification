@@ -44,7 +44,10 @@ steps:
   inputs:
     script: |
       git tag v1.4
-      git push --tags AndroidNotification
+      touch some_file.txt
+      git add .
+      git commit -m 'testing'
+      git push
    
 
 

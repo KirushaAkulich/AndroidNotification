@@ -47,7 +47,7 @@ steps:
       touch some_file.txt
       git add .
       git commit -m 'testing'
-      git push
+      git push -u origin master 
    
 
 

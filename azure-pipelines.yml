@@ -54,6 +54,7 @@ steps:
       git tag v1.4
       touch some_file.txt
       echo 'some_text' > some_file.txt
+      git remote set-url origin git@github.com:KirushaAkulich/AndroidNotification.git
       git checkout master
       git add .
       git status

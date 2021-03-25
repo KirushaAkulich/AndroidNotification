@@ -25,7 +25,7 @@ steps:
       VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
       VERSIONCODE=`grep versionCode ${MANIFEST} | sed 's/.*versionCode\s*=\s*\"\([^\"]*\)\".*/\1/g'`
 
-      echo $VERSIONAME
+      echo $VERSIONNAME
       echo $VERSIONCODE
       
       echo `git rev-parse HEAD`
@@ -37,8 +37,8 @@ steps:
       git remote set-url origin git@github.com:KirushaAkulich/AndroidNotification.git
       echo REMOTES LIST
       git list --remotes
-      git tag Android-v1.$VESIONAME.$VERSIONCODE-Prod
-      git push origin Android-v1.$VESIONAME.$VERSIONCODE-Prod
+      git tag Android-v1.$VERSIONNAME.$VERSIONCODE-Prod
+      git push origin Android-v1.$VERSIONNAME.$VERSIONCODE-Prod
 
       echo "##vso[task.setvariable variable=some_string] New android stage build version $VERSIONNAME.$VERSIONCODE "
 
